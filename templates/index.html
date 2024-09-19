@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="https://kit.fontawesome.com/d9c78b6614.js" crossorigin="anonymous"></script>
     <title>Instagram Clone</title>
     <script src="./post.js"></script>
@@ -91,7 +91,8 @@
                 <div class="nav-links">
                     <ul class="nav-group">
                         <li class="nav-item">
-                            <a href="../templates/index.html">
+                            <a href="{% url 'index' %}">Home</a>
+
                                 <i class="fas fa-home"
                                     style="background-color: rgb(21, 24, 204); color: white; padding: .5rem; border-radius: .5rem;"></i>
                             </a>
@@ -103,7 +104,8 @@
                         </li> -->
                         <li class="nav-item">
                             <div class="sta">
-                                <a href="../templates/msg.html">
+                                <a href="{% url 'messages' %}">Messages</a>
+
                                     <i class="fab fa-facebook-messenger msg"></i>
                                 </a>
                                 <div class="circle" style="border-radius: 50%;">7</div>
@@ -112,12 +114,16 @@
                         <li class="nav-item">
                             <div class="action">
                                 <div class="profile" onclick="menuToggle()">
-                                    <a href="../templates/profile.html">
-                                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220609093221/g2-200x200.jpg"
-                                        alt="user Avatar">
-                                    </a>
+                                    <a href="{% url 'profile' %}">Profile</a>
+                                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220609093221/g2-200x200.jpg" alt="user Avatar">
+                                </div>
+                            
+                                <!-- Add Post Button -->
+                                <div class="add-post">
+                                    <a href="{% url 'add_post' %}">Add Post</a>
                                 </div>
                             </div>
+                            
                         </li>
                         <!-- <li class="nav-item">
                             <a href="">
@@ -126,14 +132,16 @@
                         </li> -->
                         <li class="nav-item">
                             <div class="sta">
-                                <a href="../templates/notification.html">
+                                <a href="{% url 'notifications' %}">Notifications</a>
+
                                     <i class="fas fa-bell bell"></i>
                                 </a>
                                 <div class="circle" style="border-radius: 50%;">2</div>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a href="../templates/settings.html">
+                            <a href="{% url 'settings' %}">Settings</a>
+
                                 <i class="fas fa-gear gear"></i>
                             </a>
                         </li>
@@ -164,7 +172,8 @@
 
                         <!-- Search Result Template -->
                         <div class="search-result d-none">
-                            <img src="profile-picture.jpg" alt="Profile Picture">
+                            <img src="{% static 'profile-picture.jpg' %}" alt="Profile Picture">
+
                             <div class="result-info">
                                 <h2>User Name</h2>
                                 <p>Username: @username</p>
@@ -180,7 +189,7 @@
                                 <div class="profilepic">
                                     <div class="profile_img on">
                                         <div class="image">
-                                            <img src="../static/images/redbull.jpg" alt="img12">
+                                            <img src="{% static 'images/redbull.jpg' %}" alt="img12">
                                         </div>
                                     </div>
                                 </div>
@@ -202,7 +211,7 @@
                                 <div class="profilepic">
                                     <div class="profile_img">
                                         <div class="image">
-                                            <img src="../static/images/a_p.jpg" alt="img12">
+                                            <img src="{% static 'images/a_p.jpg' %}" alt="img12">
                                         </div>
                                     </div>
                                 </div>
@@ -223,7 +232,7 @@
                                 <div class="profilepic">
                                     <div class="profile_img">
                                         <div class="image">
-                                            <img src="../static/images/susi.png" alt="img13">
+                                            <img src="{% static 'images/susi.png' %}" alt="img13">
                                         </div>
                                     </div>
                                 </div>
@@ -244,7 +253,8 @@
                                 <div class="profilepic">
                                     <div class="profile_img on">
                                         <div class="image">
-                                            <img src="../static/images/logo.png" alt="img14">
+                                            
+                                    <img src="{% static 'images/logo.png' %}" alt="img14">
                                         </div>
                                     </div>
                                 </div>
@@ -264,7 +274,7 @@
                                 <div class="profilepic">
                                     <div class="profile_img">
                                         <div class="image">
-                                            <img src="../static/images/shakti.png" alt="img15">
+                                            <img src="{% static 'images/shakti.png' %}" alt="img15">
                                         </div>
                                     </div>
                                 </div>
@@ -285,8 +295,8 @@
                                 <div class="profilepic">
                                     <div class="profile_img on">
                                         <div class="image">
-                                            <img src="../static/images/pragyan.png" alt="img16" class="cover">
-                                        </div>
+                                            
+<img src="{% static 'images/pragyan.png' %}" alt="img16" class="cover">                                        </div>
                                     </div>
                                 </div>
                                 <!-- <div class="circle" style="background: rgb(73, 255, 73);"></div> -->
@@ -308,7 +318,8 @@
                     <div class="sta">
                         <div class="status" style="background: none;">
                             <div class="image">
-                                <img src="../static/images/a_p.jpg" alt="img3">
+                               
+                                <img src="{% static 'images/a_p.jpg' %}" alt="img3">
                             </div>
                         </div>
                         <div class="circle">
@@ -319,7 +330,8 @@
                     <div class="sta">
                         <div class="status on">
                             <div class="image">
-                                <img src="../static/images/logo.png" alt="img3">
+                               
+<img src="{% static 'images/logo.png' %}" alt="img3">
                             </div>
                         </div>
                         <div class="circle">
@@ -329,7 +341,7 @@
                     <div class="sta">
                         <div class="status">
                             <div class="image">
-                                <img src="../static/images/shakti.png" alt="img4">
+                                <img src="{% static 'images/shakti.png' %}" alt="img4">
                             </div>
                         </div>
                         <div class="circle">
@@ -339,7 +351,7 @@
                     <div class="sta">
                         <div class="status on">
                             <div class="image">
-                                <img src="../static/images/pragyan.png" alt="img5">
+                                <img src="{% static 'images/pragyan.png' %}" alt="img5">
                             </div>
                         </div>
                         <div class="circle">
@@ -349,7 +361,8 @@
                     <div class="sta">
                         <div class="status on">
                             <div class="image">
-                                <img src="../static/images/logo.png" alt="img6">
+                                
+<img src="{% static 'images/logo.png' %}" alt="img6">
                             </div>
                         </div>
                         <div class="circle">
@@ -359,7 +372,8 @@
                     <div class="sta">
                         <div class="status">
                             <div class="image">
-                                <img src="../static/images/susi.png" alt="img7">
+                                
+<img src="{% static 'images/susi.png' %}" alt="img7">
                             </div>
                         </div>
                         <div class="circle">
@@ -369,7 +383,8 @@
                     <div class="sta">
                         <div class="status on">
                             <div class="image">
-                                <img src="../static/images/logo.png" alt="img8">
+                                
+<img src="{% static 'images/logo.png' %}" alt="img8">
                             </div>
                         </div>
                         <div class="circle">
@@ -379,7 +394,7 @@
                     <div class="sta">
                         <div class="status on">
                             <div class="image">
-                                <img src="../static/images/logo.png" alt="img3">
+                                <img src="{% static 'images/logo.png' %}" alt="img3">
                             </div>
                         </div>
                         <div class="circle">
@@ -393,8 +408,7 @@
 
                     <div class="new_style">
                         <div class="imgBx">
-                            <img src="../static/images/child-817371_1920.jpg" alt="post-1" class="cover">
-                        </div>
+                            <img src="{% static 'images/child-817371_1920.jpg' %}" alt="post-1" class="cover">
 
                         <div class="bottom">
                             <div class="caption">
@@ -421,7 +435,7 @@
                                         <div class="sta">
                                             <div class="profile_img">
                                                 <div class="image">
-                                                    <img src="../static/images/shakti.png" alt="img8">
+                                                    <img src="{% static 'images/shakti.png' %}" alt="img8">
                                                 </div>
                                             </div>
                                         </div>
@@ -470,7 +484,7 @@
 
                     <div class="new_style">
                         <div class="imgBx">
-                            <img src="../static/images/children-1822704_1920.jpg" alt="post-1" class="cover">
+                            <img src="{% static 'images/children-1822704_1920.jpg' %}" alt="post-1" class="cover">
                         </div>
 
                         <div class="bottom">
@@ -498,7 +512,8 @@
                                         <div class="sta">
                                             <div class="profile_img on">
                                                 <div class="image">
-                                                    <img src="../static/images/logo.png" alt="img8">
+                                                    
+<img src="{% static 'images/logo.png' %}" alt="img8">
                                                 </div>
                                             </div>
                                         </div>
@@ -547,7 +562,8 @@
 
                     <div class="new_style">
                         <div class="imgBx">
-                            <img src="../static/images/children-593313_1920.jpg" alt="post-1" class="cover">
+                            <img src="{% static 'images/children-593313_1920.jpg' %}" alt="post-1" class="cover">
+
                         </div>
 
                         <div class="bottom">
@@ -575,7 +591,8 @@
                                         <div class="sta">
                                             <div class="profile_img">
                                                 <div class="image">
-                                                    <img src="../static/images/susi.png" alt="img8">
+                                                   
+<img src="{% static 'images/susi.png' %}" alt="img8">
                                                 </div>
                                             </div>
                                         </div>
