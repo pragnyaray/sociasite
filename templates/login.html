@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+</head>
+<body>
+    <!-- <video autoplay muted loop id="myVideo">
+        <source src="/html&css/images/3129595-uhd_3840_2160_30fps.mp4" type="video/mp4">
+      </video> -->
+    <div class="container">
+        <div class="left-side">
+            <i class="fas fa-user-circle i"></i>
+            <h1>Login</h1>
+            <h3>to your account</h3>
+            <input type="text" name="Username" placeholder="Username" required>
+            <input type="password"id="pass" name="Password" placeholder="Password" required onclick="myFunction1()">
+            <i class="fas" id="see" onclick="myFunction()"></i>
+            <button>LOG IN</button><br>
+            <a href="./forgot-pass.html">Forgot Password?</a>
+        </div>
+        <div class="right-side">
+            <i class="fas fa-user i"></i>
+            <h1>Signup</h1>
+            <h3>To create a new account <br><i class="fas fa-hand-point-down"></i></h3>
+            <div class="social-buttons">
+                <!-- <button><i class="fab fa-twitter" style="color: rgb(0, 162, 255);"></i></button>
+                <button><i class="fab fa-facebook-f" style="color: rgb(0, 85, 255);"></i></button> -->
+                <label for="google">
+                <h3>Direct Signup using google</h3></label>
+                <a href="#"><button id="google"><i class="fab fa-google-plus-g" style="color: rgb(255, 157, 0);"></i></button></a>
+            </div>
+            <br>
+            <p>Don't have an account?
+                <br> <a href="./signup.html">Register</a></p>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("pass");
+            let icon = document.getElementById("see");
+            if (x.type === "password") {
+                x.type = "text";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            } else {
+                x.type = "password";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            }
+        }
+        function myFunction1() {
+            var x = document.getElementById("pass");
+            let icon = document.getElementById("see");
+            if (x.type === "password") {
+                icon.classList.add("fa-eye-slash");
+                icon.classList.remove("fa-eye");
+            } else {
+                icon.classList.add("fa-eye");
+                icon.classList.remove("fa-eye-slash");
+            }
+        }
+    </script>
+</body>
+</html>
